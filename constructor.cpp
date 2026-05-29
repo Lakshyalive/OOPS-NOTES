@@ -92,6 +92,20 @@ public:
 
 class Student {
 public:
+    /* NOTE:
+        Here I am using dynamic memory allocation for cgpa by creating a pointer.
+        Memory is allocated in heap using 'new', and the pointer stores the address
+        of that heap memory.
+
+        Deep copy is implemented using the copy constructor to avoid shallow copy problems.
+        In deep copy, a new separate memory location is created for the copied object,
+        and only the value is copied instead of copying the pointer address.
+
+        This prevents problems such as:
+        1. Dangling pointers
+        2. Double delete
+        3. Accidental sharing of the same memory between objects
+    */
     string name;
     float* cgpaPtr; // i have created a pointer.
     Student(string name , double cgpa) {
